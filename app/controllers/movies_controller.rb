@@ -64,11 +64,11 @@ class MoviesController < ApplicationController
     movie = Movie.find(params[:id])
 
     @movies_by_same_director = []
-    if movie.director
+    if movie.director and movie.director != ''
       @movies_by_same_director = movie.get_movies_by_same_director
     else
       flash[:notice] = "'#{movie.title}' has no director info"
-      redirect_to movie_path(movie)
+      redirect_to movies_path
     end
 
   end

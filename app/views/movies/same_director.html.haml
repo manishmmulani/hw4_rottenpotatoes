@@ -1,0 +1,6 @@
+%h2 "Similar Movies Page"
+
+%table
+  -@movies_by_same_director.each do |mov|
+    %tr
+      %td= mov.title

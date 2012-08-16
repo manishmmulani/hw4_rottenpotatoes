@@ -14,6 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
+    when /^the home page$/ then '/movies'
     when /^the movies page$/ then '/movies'
     when /^the edit page for "(.+)"$/  then "/movies/#{Movie.find_by_title($1).id}/edit"
     when /^the details page for "(.+)"$/ then "/movies/#{Movie.find_by_title($1).id}"
